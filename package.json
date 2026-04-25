@@ -1,0 +1,13 @@
+{
+  "name": "projet-inf8808",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project for INF8808 visualizations and preprocessing",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "live-server --port=3000 --ignorePattern=node_modules"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

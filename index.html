@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord — Projet INF8808</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <h1>Popularité Spotify: Lecture comparative de 250 chansons</h1>
+      <p>
+        Ce tableau de bord regroupe trois visualisations complémentaires. Commencez par la vue globale (coordonnées parallèles),
+        puis utilisez les filtres par genre et terminez avec les distributions par type de morceau, durée et tonalité.
+      </p>
+    </header>
+
+    <section class="dashboard-section">
+      <div class="section-header">
+        <div>
+          <h2>Les attributs musicaux des chansons populaires</h2>
+          <span>Chaque ligne représente une chanson. Les axes montrent danceability, energy, valence, tempo, liveness et popularité.</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <iframe
+          class="frame frame-parallel"
+          src="/Visualisation1/index.html"
+          title="Diagramme de coordonnées parallèles">
+        </iframe>
+      </div>
+      <p class="section-reading">À observer: Danceability et Energy élevés : La grande majorité des succès se rejoignent en haut des axes danceability et energy (généralement au-dessus de 0.6). C'est le critère le plus constant.</p>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="dashboard-section">
+        <div class="section-header">
+          <div>
+            <h2>Genres musicaux: Comparaison de popularité et de profil audio</h2>
+            <span>Le graphique de gauche classe les genres. La heatmap compare les moyennes audio des genres sélectionnés.</span>
+          </div>
+        </div>
+        <div class="section-body">
+          <iframe
+            class="frame frame-genre"
+            src="/Visualisation2/index.html"
+            title="Segmentation par genre">
+          </iframe>
+        </div>
+        <p class="section-reading">À observer: Un genre populaire n’a pas toujours un profil audio extrême. Plusieurs genres performants restent proches de la moyenne.</p>
+      </article>
+
+      <article class="dashboard-section">
+        <div class="section-header">
+          <div>
+            <h2>Effet du type, de la durée et de la tonalité sur la popularité</h2>
+            <span>Les boîtes comparent la distribution de popularité. Le mode tonalité montre la moyenne par note et mode majeur/mineur.</span>
+          </div>
+        </div>
+        <div class="section-body">
+          <iframe
+            class="frame frame-features"
+            src="/Visualisation3/index.html"
+            title="Caractéristiques musicales">
+          </iframe>
+        </div>
+        <p class="section-reading">À observer: le succès statistique semble résider dans un morceau avec paroles, d'une durée de 3 à 5 minutes, avec une haute énergie, une forte danceability et une production studio (low liveness).</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

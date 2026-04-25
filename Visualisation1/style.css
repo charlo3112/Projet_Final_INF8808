@@ -1,0 +1,108 @@
+body {
+  font-family: sans-serif;
+  padding: clamp(0.45rem, 1vw, 0.7rem) clamp(0.5rem, 1.1vw, 0.85rem) 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.viz1-layout {
+  width: min(100%, 70rem);
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0 0 clamp(0.35rem, 0.8vw, 0.55rem);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  text-align: center;
+}
+
+.reading-box {
+  margin-bottom: clamp(0.35rem, 0.8vw, 0.55rem);
+  padding: clamp(0.35rem, 0.7vw, 0.55rem) clamp(0.45rem, 0.8vw, 0.65rem);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  font-size: clamp(0.72rem, 1vw, 0.8rem);
+  line-height: 1.35;
+}
+
+.reading-box p {
+  margin: 0.15rem 0;
+}
+
+#chart {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.2;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.line.dimmed {
+  opacity: 0.05;
+}
+
+.axis text {
+  font-size: 0.66rem;
+}
+
+.axis {
+  will-change: transform;
+}
+
+.brush .selection {
+  fill: steelblue;
+  fill-opacity: 0.2;
+  stroke: steelblue;
+}
+
+#legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.5rem, 1vw, 0.85rem);
+  margin-bottom: 0;
+  font-size: clamp(0.72rem, 1vw, 0.8rem);
+}
+
+.drag-handle:hover {
+  fill: steelblue;
+}
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  color: #555;
+  transition: background 0.15s, border-color 0.15s;
+}
+button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+#reset-btn {
+  display: none;
+  margin-bottom: 0.2rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  font-size: clamp(0.7rem, 0.95vw, 0.78rem);
+}
+
+#legend-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.45rem, 1vw, 0.85rem);
+  margin-bottom: clamp(0.3rem, 0.7vw, 0.5rem);
+}

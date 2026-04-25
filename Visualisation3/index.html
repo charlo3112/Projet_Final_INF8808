@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Popularité selon le type et la durée des morceaux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="viz3-header">
+  </div>
+  <div class="reading-box">
+    <p><strong>Comment lire:</strong> Les boîtes montrent la distribution de popularité (médiane et dispersion) pour chaque catégorie, et la heatmap indique les moyennes de popularité par tonalité et mode.</p>
+    <p><strong>À comparer:</strong> La heatmap montre les moyennes par note majeure ou mineure, et les boîtes permettent aussi de comparer les distributions de popularité entre catégories.</p>
+    <p class="viz3-summary"><strong>Objectif:</strong> Cette visualisation présente l'influence du type de morceau, de sa durée et de sa tonalité sur la popularité. Elle permet de mener une étude comparative entre catégories, d'identifier des tendances clés et de mettre en évidence les relations entre caractéristiques musicales et succès.</p>
+  </div>
+
+  <button id="toggle-heatmap" type="button">Voir la tonalité et le mode</button>
+
+  <div id="group-view">
+    <div id="charts-container">
+      <div class="panel">
+        <h3>Présence de paroles</h3>
+        <svg id="chart-a"></svg>
+      </div>
+      <div class="panel">
+        <h3>Durée du morceau</h3>
+        <svg id="chart-b"></svg>
+      </div>
+    </div>
+    <div class="panel panel-full panel-hidden" id="heatmap-panel">
+      <h2>Popularité moyenne par tonalité et mode</h2>
+      <svg id="chart-c"></svg>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="functions.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>

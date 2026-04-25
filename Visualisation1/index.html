@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallel Coordinates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="viz1-layout">
+    <div class="reading-box">
+      <p><strong>Comment lire:</strong> Chaque ligne est une chanson. Les couleurs indiquent le niveau de popularité.</p>
+      <p><strong>Interaction:</strong> Cliquez dans un axe pour filtrer, puis déplacez les axes pour comparer des relations.</p>
+      <p><strong>Objectif:</strong> Ce diagramme à coordonnées parallèles permet d'explorer les corrélations entre les attributs musicaux (danceability, energy, tempo, valence, liveness) et la popularité des chansons. Chaque ligne représente une chanson, colorée selon son niveau de popularité. L'objectif est d'identifier si certaines combinaisons de caractéristiques audio sont systématiquement associées aux chansons les plus populaires.</p>
+    </div>
+    <div id="legend-bar">
+      <div id="legend"></div>
+      <button id="reset-btn"> X Réinitialiser les filtres de colonne(s)</button>
+    </div>
+    <svg id="chart"></svg>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="functions.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>

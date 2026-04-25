@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualisation 2 — Genres, popularité et profil audio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="reading-box">
+    <p><strong>Comment lire:</strong> À gauche, la popularité moyenne par genre. À droite, la moyenne des attributs audio du genre.</p>
+    <p><strong>Interaction:</strong> Appliquez les filtres, cliquez des genres, puis utilisez les filtres audio au-dessus de la heatmap.</p>
+    <p><strong>Objectif:</strong> Le but principal est d'explorer la relation entre la popularité des genres musicaux et leurs caractéristiques audio. Ces visualisations tentent d'expliquer la nature sonore de cette popularité en analysant les profils audio et identifier les traits dominants.</p>
+  
+  </div>
+
+  <div id="controls-bar">
+    <div class="control-group">
+      <label for="filter-popularity">Popularité</label>
+      <select id="filter-popularity">
+        <option value="all">Toutes</option>
+        <option value="high">Élevée (≥70)</option>
+        <option value="medium">Moyenne (40–69)</option>
+        <option value="low">Faible (&lt;40)</option>
+      </select>
+    </div>
+    <div class="control-group" id="group-explicit">
+      <label for="filter-topn">Nombre de genres</label>
+      <select id="filter-topn">
+        <option value="0">Tous</option>
+        <option value="10">Top 10</option>
+        <option value="15">Top 15</option>
+        <option value="20" selected>Top 20</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="filter-explicit">Explicit</label>
+      <select id="filter-explicit">
+        <option value="all">Tous</option>
+        <option value="yes">Oui</option>
+        <option value="no">Non</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="toggle-all-view" type="button" hidden>Voir le profil audio</button>
+
+  <div id="charts-row">
+    <div id="panel-bar">
+      <div class="panel-title">Popularité moyenne par genre</div>
+      <svg id="bar-svg"></svg>
+      <div class="panel-hint">Cliquez sur un genre pour le sélectionner ou le retirer.</div>
+    </div>
+    <div id="panel-heat">
+      <div class="panel-title">Profil audio moyen des genres sélectionnés</div>
+      <div id="audio-filter-bar">
+        <label>Audio</label>
+        <div id="audio-chips">
+          <span class="chip active" data-key="danceability">Danceability</span>
+          <span class="chip active" data-key="energy">Energy</span>
+          <span class="chip active" data-key="tempo">Tempo</span>
+          <span class="chip active" data-key="valence">Valence</span>
+          <span class="chip active" data-key="acousticness">Acousticness</span>
+        </div>
+      </div>
+      <svg id="heat-svg"></svg>
+      <div class="panel-hint">Plus une case est foncée, plus la valeur moyenne est élevée.</div>
+    </div>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="functions.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
